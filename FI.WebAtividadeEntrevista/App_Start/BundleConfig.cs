@@ -49,6 +49,11 @@ namespace FI.WebAtividadeEntrevista
 
             bundles.Add(new ScriptBundle("~/bundles/jquerymask").Include(
                         "~/Scripts/jquery.mask.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
+                        "~/Scripts/jquery.inputmask.min.js"));
+
+            
         }
     }
 }

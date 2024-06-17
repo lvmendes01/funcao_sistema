@@ -30,7 +30,7 @@ $(document).ready(function () {
                 "Cidade": $(this).find("#Cidade").val(),
                 "Logradouro": $(this).find("#Logradouro").val(),
                 "Telefone": $(this).find("#Telefone").val(),
-                "CPF": $(this).find("#Cpf").val()
+                "CPF": $(this).find("#Cpf").val().replaceAll('.', '').replaceAll('-', '')
             },
             error:
             function (r) {
