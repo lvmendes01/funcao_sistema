@@ -3,8 +3,7 @@ $(document).ready(function () {
 
     $('#Cpf').mask('000.000.000-00');
 
-   
-
+    $('#btn_Beneficiários').hide();
     $('#formCadastro').submit(function (e) {
         e.preventDefault();
 
@@ -47,26 +46,20 @@ $(document).ready(function () {
 
 function Validacao_CPF() {
     $('#btn_submit').attr('disabled', true);
-
     let cpf = $('#Cpf').val();
-
-
     const formattedCpf = cpf.replaceAll('.', '').replaceAll('-', '');
-
-
-
     let validarcpf = isValidCPF(formattedCpf)
 
     if (validarcpf) {
 
-        let validar_duplicidade = validarDuplicidadeCPf(formattedCpf);
-        if (validar_duplicidade) {
-            $('#btn_submit').attr('disabled', false);
-        } else {
-
-            ModalDialog("CPF", "CPF Dupicado");
-        }
-        
+         validarDuplicidadeCPf(formattedCpf).then(isDuplicate => {
+            if (isDuplicate) {
+                ModalDialog("CPF", "CPF Dupicado");
+            } else {
+                $('#btn_submit').attr('disabled', false);
+            }
+        });
+       
         } else {
 
             ModalDialog("CPF", "CPF invalido");
@@ -124,28 +117,32 @@ function isValidCPF(cpf) {
 
  async function validarDuplicidadeCPf(cpf) {
 
+     
+     try {
+       
+         const payload = {cpf: cpf};
+        
+         const response = await fetch(urlValidarCpf, {
+             method: 'POST', 
+             headers: {
+                 'Content-Type': 'application/json'
+             },
+             body: JSON.stringify(payload) 
+         });
+                
+         if (!response.ok) {
+             ModalDialog("Ocorreu um erro", "Ocorreu um erro interno no servidor.");
+         }
 
-
-
-
-    $.ajax({
-        url: urlValidarCpf,
-        type: 'Post',
-        data: { cpf: cpf }, 
-        dataType: 'json',
-        success: function (response) {
-            if (response.error) {
-                // Handle errors (display to user, etc.)
-                console.error(response.error);
-            } else {
-                // Process the consultation result (display data, etc.)
-                console.log(response);
-            }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.error('An error occurred:', textStatus, errorThrown);
-        }
-    });
+        
+         const data = await response.json();
+         return data;
+     } catch (error) {
+       
+         ModalDialog("Ocorreu um erro", "Ocorreu um erro interno no servidor.");
+         return false;
+     }
+  
   
 }
 
