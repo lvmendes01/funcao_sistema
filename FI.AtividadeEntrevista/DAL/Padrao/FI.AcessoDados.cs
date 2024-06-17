@@ -47,6 +47,8 @@ namespace FI.AtividadeEntrevista.DAL
 
             comando.Connection = conexao;
             comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.Clear();
             comando.CommandText = NomeProcedure;
             foreach (var item in parametros)
                 comando.Parameters.Add(item);

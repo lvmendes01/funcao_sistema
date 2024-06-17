@@ -1,4 +1,4 @@
-﻿CREATE PROC FI_SP_AltCliente
+﻿alter PROC FI_SP_AltCliente
     @NOME          VARCHAR (50) ,
     @SOBRENOME     VARCHAR (255),
     @NACIONALIDADE VARCHAR (50) ,

@@ -12,7 +12,13 @@ namespace WebAtividadeEntrevista.Models
     public class ClienteModel
     {
         public long Id { get; set; }
-        
+
+        /// <summary>
+        /// CPF
+        /// </summary>
+        [Required]
+        public string CPF { get; set; }
+
         /// <summary>
         /// CEP
         /// </summary>
@@ -31,11 +37,7 @@ namespace WebAtividadeEntrevista.Models
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Digite um e-mail válido")]
         public string Email { get; set; }
 
-        /// <summary>
-        /// Cpf
-        /// </summary>
-        [RegularExpression(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{11}$", ErrorMessage = "Digite um Cpf válido")]
-        public string Cpf { get; set; }
+              
 
         /// <summary>
         /// Estado

@@ -10,7 +10,8 @@ $(document).ready(function () {
         $('#formCadastro #Cidade').val(obj.Cidade);
         $('#formCadastro #Logradouro').val(obj.Logradouro);
         $('#formCadastro #Telefone').val(obj.Telefone);
-        $('#formCadastro #Cpf').val(obj.Cpf);
+        $('#formCadastro #Cpf').val(obj.CPF);
+        $("#Cpf").inputmask("999.999.999-99");
     }
 
     $('#formCadastro').submit(function (e) {
@@ -29,7 +30,7 @@ $(document).ready(function () {
                 "Cidade": $(this).find("#Cidade").val(),
                 "Logradouro": $(this).find("#Logradouro").val(),
                 "Telefone": $(this).find("#Telefone").val(),
-                "Cpf": $(this).find("#Cpf").val()
+                "CPF": $(this).find("#Cpf").val()
             },
             error:
             function (r) {

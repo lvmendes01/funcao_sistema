@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FI.AtividadeEntrevista.DML;
+using System.Threading.Tasks;
 
 namespace WebAtividadeEntrevista.Controllers
 {
@@ -21,6 +22,15 @@ namespace WebAtividadeEntrevista.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<JsonResult>   ConsultaCpf(string cpf)
+        {
+            BoCliente bo = new BoCliente();
+            var resultado = bo.VerificarExistencia(cpf);
+            return Json(resultado);
+        }
+
 
         [HttpPost]
         public JsonResult Incluir(ClienteModel model)
@@ -49,7 +59,8 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = model.Nacionalidade,
                     Nome = model.Nome,
                     Sobrenome = model.Sobrenome,
-                    Telefone = model.Telefone
+                    Telefone = model.Telefone,
+                    CPF = model.CPF.Replace(".", "").Replace("-", "")
                 });
 
            
@@ -84,7 +95,8 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = model.Nacionalidade,
                     Nome = model.Nome,
                     Sobrenome = model.Sobrenome,
-                    Telefone = model.Telefone
+                    Telefone = model.Telefone,
+                    CPF = model.CPF
                 });
                                
                 return Json("Cadastro alterado com sucesso");
@@ -111,7 +123,8 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = cliente.Nacionalidade,
                     Nome = cliente.Nome,
                     Sobrenome = cliente.Sobrenome,
-                    Telefone = cliente.Telefone
+                    Telefone = cliente.Telefone,
+                    CPF = cliente.CPF
                 };
 
             
