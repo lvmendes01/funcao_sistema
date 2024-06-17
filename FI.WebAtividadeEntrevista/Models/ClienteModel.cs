@@ -32,6 +32,12 @@ namespace WebAtividadeEntrevista.Models
         public string Email { get; set; }
 
         /// <summary>
+        /// Cpf
+        /// </summary>
+        [RegularExpression(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{11}$", ErrorMessage = "Digite um Cpf válido")]
+        public string Cpf { get; set; }
+
+        /// <summary>
         /// Estado
         /// </summary>
         [Required]

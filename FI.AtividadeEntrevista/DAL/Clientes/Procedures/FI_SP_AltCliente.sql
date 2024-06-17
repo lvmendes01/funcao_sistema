@@ -5,6 +5,7 @@
     @CEP           VARCHAR (9)  ,
     @ESTADO        VARCHAR (2)  ,
     @CIDADE        VARCHAR (50) ,
+    @CPF           VARCHAR (11) ,
     @LOGRADOURO    VARCHAR (500),
     @EMAIL         VARCHAR (2079),
     @TELEFONE      VARCHAR (15),
@@ -21,6 +22,7 @@ BEGIN
 		CIDADE = @CIDADE, 
 		LOGRADOURO = @LOGRADOURO, 
 		EMAIL = @EMAIL, 
-		TELEFONE = @TELEFONE
+		TELEFONE = @TELEFONE,
+		CPF = @CPF
 	WHERE Id = @Id
 END
