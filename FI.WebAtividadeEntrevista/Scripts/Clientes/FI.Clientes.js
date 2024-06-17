@@ -1,5 +1,8 @@
 ﻿
 $(document).ready(function () {
+
+    $('#Cpf').mask('000.000.000-00');
+
     $('#formCadastro').submit(function (e) {
         e.preventDefault();
         $.ajax({
