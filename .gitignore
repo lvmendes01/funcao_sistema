@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/FI.WebAtividadeEntrevista
+/FI.AtividadeEntrevista/.vs
+/FI.AtividadeEntrevista/bin/Debug
+/FI.AtividadeEntrevista/obj/Debug
+/FI.WebAtividadeEntrevista/bin
