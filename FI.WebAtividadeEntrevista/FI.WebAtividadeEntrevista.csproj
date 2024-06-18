@@ -187,7 +187,6 @@
     <Content Include="Scripts\Beneficiarios\FI.AltBeneficiarios.js" />
     <Content Include="Scripts\Beneficiarios\FI.beneficiarios.js" />
     <Content Include="Scripts\Beneficiarios\FI.ListBeneficiarios.js" />
-    <Content Include="Scripts\Clientes\FI.beneficiarios.js" />
     <Content Include="Scripts\Clientes\FI.AltClientes.js" />
     <Content Include="Scripts\Clientes\FI.Clientes.js" />
     <Content Include="Scripts\Clientes\FI.ListClientes.js" />

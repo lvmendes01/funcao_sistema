@@ -1,5 +1,5 @@
 ﻿
-CREATE PROC FI_SP_ConsBeneficiarios @ID BIGINT
+CREATE PROC FI_SP_ConsBeneficiarios @IDCLIENTE BIGINT
 AS
 BEGIN
 	

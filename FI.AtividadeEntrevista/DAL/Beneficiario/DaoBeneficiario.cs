@@ -1,5 +1,6 @@
 ﻿using FI.AtividadeEntrevista.BLL;
 using FI.AtividadeEntrevista.DML;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -74,7 +75,28 @@ namespace FI.AtividadeEntrevista.DAL
 
             base.Executar("FI_SP_DelBeneficiario", parametros);
         }
+        internal List<Beneficiario> Pesquisa(Int64 idCliente, int iniciarEm, int quantidade, string campoOrdenacao, bool crescente, out int qtd)
+        {
+            List<System.Data.SqlClient.SqlParameter> parametros = new List<System.Data.SqlClient.SqlParameter>();
 
+            parametros.Add(new System.Data.SqlClient.SqlParameter("iniciarEm", iniciarEm));
+            parametros.Add(new System.Data.SqlClient.SqlParameter("quantidade", quantidade));
+            //parametros.Add(new System.Data.SqlClient.SqlParameter("campoOrdenacao", campoOrdenacao));
+            parametros.Add(new System.Data.SqlClient.SqlParameter("crescente", 1));
+            parametros.Add(new System.Data.SqlClient.SqlParameter("IdCliente", idCliente));
+
+            DataSet ds = base.Consultar("FI_SP_PesqBeneficiario", parametros);
+            List<DML.Beneficiario> cli = Converter(ds);
+
+            int iQtd = 0;
+
+            if (ds.Tables.Count > 1 && ds.Tables[1].Rows.Count > 0)
+                int.TryParse(ds.Tables[1].Rows[0][0].ToString(), out iQtd);
+
+            qtd = iQtd;
+
+            return cli;
+        }
         private List<DML.Beneficiario> Converter(DataSet ds)
         {
             List<DML.Beneficiario> lista = new List<DML.Beneficiario>();

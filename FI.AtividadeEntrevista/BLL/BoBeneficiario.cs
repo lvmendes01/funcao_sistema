@@ -50,7 +50,12 @@ namespace FI.AtividadeEntrevista.BLL
             cli.Excluir(id);
         }
 
-       
+        public List<DML.Beneficiario> Pesquisa(Int64 idCliente, int iniciarEm, int quantidade, string campoOrdenacao, bool crescente, out int qtd)
+        {
+            DAL.DaoBeneficiario cli = new DAL.DaoBeneficiario();
+            return cli.Pesquisa(idCliente, iniciarEm, quantidade, campoOrdenacao, crescente, out qtd);
+        }
+
 
     }
 }
