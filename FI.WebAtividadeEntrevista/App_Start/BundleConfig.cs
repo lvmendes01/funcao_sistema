@@ -53,7 +53,16 @@ namespace FI.WebAtividadeEntrevista
             bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
                         "~/Scripts/jquery.inputmask.min.js"));
 
-            
+
+            bundles.Add(new ScriptBundle("~/bundles/validacaoCpf").Include(
+                      "~/Scripts/Clientes/validacaoCpf.js"));
+
+
+
+            bundles.Add(new ScriptBundle("~/bundles/beneficiarios").Include(
+                      "~/Scripts/Clientes/FI.beneficiarios.js"));
+      
+
         }
     }
 }
