@@ -55,15 +55,13 @@ namespace FI.WebAtividadeEntrevista
 
 
             bundles.Add(new ScriptBundle("~/bundles/validacaoCpf").Include(
-                      "~/Scripts/Clientes/validacaoCpf.js"));
-
-
+                      "~/Scripts/Comum/validacaoCpf.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/beneficiarios").Include(
-                      "~/Scripts/Clientes/FI.beneficiarios.js"));
+                      "~/Scripts/Beneficiarios/FI.beneficiarios.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/listBeneficiarios").Include(
-                      "~/Scripts/Clientes/FI.ListBeneficiarios.js"));
+                      "~/Scripts/Beneficiarios/FI.ListBeneficiarios.js"));
             
         }
     }
