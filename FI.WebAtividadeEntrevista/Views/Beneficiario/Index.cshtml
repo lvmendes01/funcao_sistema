@@ -44,6 +44,8 @@
 
 
             </form>
+
+            <table id="gridBeneficiarios" class="table"></table>
         </div>
     </div>
 </div>
@@ -57,50 +59,17 @@
 <script>
 
     var urlPostBeneficiários = '@Url.Action("Incluir", "Beneficiario", new { area = "" })';
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    var urlPostListaBeneficiários = '@Url.Action("BeneficiariosPeloCliente", "Beneficiario", new { area = "" })';
 
-@Scripts.Render("~/bundles/jqueryui")
-@Scripts.Render("~/bundles/jtable")
+
+</script>
+<!-- Bootstrap JS (se estiver usando Bootstrap) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 @Scripts.Render("~/bundles/bootstrap")
 @Scripts.Render("~/bundles/beneficiarios")
+@Scripts.Render("~/bundles/listBeneficiarios")
 @Scripts.Render("~/bundles/jquerymask")
 @Scripts.Render("~/bundles/inputmask")
 @Scripts.Render("~/bundles/validacaoCpf")
 
-<script>
-
-    $('#cpfBeneficiario').mask('000.000.000-00');
-
-    $('#btn_IncluirBeneficiários').click(function () {
-        try {
-
-            document.getElementById('btn_IncluirBeneficiários')
-
-            $.ajax({
-                url: urlPostBeneficiários,
-                method: "POST",
-                data: {
-                    "NOME": $(this).find("#nomeBeneficiario").val(),
-                    "CPF": cpfBeneficiario,
-                    "IDCLIENTE": $(this).find("#IDCLIENTE").val(),
-                },
-                error:
-                    function (r) {
-                        if (r.status == 400)
-                            ModalDialog("Ocorreu um erro", r.responseJSON);
-                        else if (r.status == 500)
-                            ModalDialog("Ocorreu um erro", "Ocorreu um erro interno no servidor.");
-                    },
-                success:
-                    function (r) {
-                        ModalDialog("Sucesso!", r)
-                        $("#formCadastro")[0].reset();
-                        window.location.href = urlRetorno;
-                    }
-            });
-        } catch (error) {
-            console.error('Error loading modal content:', error);
-        }
-    });
-</script>

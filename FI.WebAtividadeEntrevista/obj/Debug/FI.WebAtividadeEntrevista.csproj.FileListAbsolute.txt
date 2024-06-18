@@ -1,3 +1,5 @@
+D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\obj\Debug\FI.WebAtividadeEntrevista.csproj.AssemblyReference.cache
+D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\obj\Debug\FI.WebAtividadeEntrevista.csproj.CoreCompileInputs.cache
 D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\bin\FI.WebAtividadeEntrevista.dll.config
 D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\bin\FI.WebAtividadeEntrevista.dll
 D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\bin\FI.WebAtividadeEntrevista.pdb
@@ -74,8 +76,6 @@ D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\bin\System.Web.WebPages.Razor.x
 D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\bin\Newtonsoft.Json.xml
 D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\bin\Antlr3.Runtime.pdb
 D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\obj\Debug\FI.WebAtividadeEntrevista.csproj.AssemblyReference.cache
-D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\obj\Debug\FI.WebAtividadeEntrevista.csproj.CoreCompileInputs.cache
 D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\obj\Debug\FI.WebAt.CEBAAAF9.Up2Date
 D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\obj\Debug\FI.WebAtividadeEntrevista.dll
 D:\2024\funcao_sistema\FI.WebAtividadeEntrevista\obj\Debug\FI.WebAtividadeEntrevista.pdb
