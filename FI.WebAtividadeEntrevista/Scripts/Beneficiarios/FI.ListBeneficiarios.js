@@ -39,13 +39,11 @@ $(document).ready(function () {
                 },
                 Nome: {
                     title: 'Nome',
-                    width: '50%',
-                    edit: true
+                    width: '50%'
                 },
                 CPF: {
                     title: 'CPF',
-                    width: '35%',
-                    edit: true
+                    width: '35%'
                 },
                 Actions: {
                     title: 'Ações',
