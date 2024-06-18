@@ -64,20 +64,38 @@ namespace WebAtividadeEntrevista.Controllers
             }
             else
             {
-
-                model.Id = bo.Incluir(new Beneficiario()
+                bo.Alterar(new Beneficiario()
                 {
-                    IdCliente = model.IDCLIENTE,
+                    Id = model.Id,
                     Nome = model.Nome,
-                    CPF = model.CPF.Replace(".", "").Replace("-", "")
+                    CPF = model.CPF
                 });
 
-
-                return Json("Cadastro efetuado com sucesso");
+                return Json(new { Result = "OK", }, JsonRequestBehavior.AllowGet);
             }
         }
+    
+
+        [HttpGet]
+        public JsonResult Alterar(long id)
+        {
+            BoBeneficiario bo = new BoBeneficiario();
+            Beneficiario cliente = bo.Consultar(id);
+            Models.BeneficiarioModel model = null;
+
+            if (cliente != null)
+            {
+                model = new BeneficiarioModel()
+                {
+                    Id = cliente.Id,
+                    Nome = cliente.Nome,
+                    CPF = cliente.CPF
+                };
 
 
+            }
+            return Json(new { Result = "OK", Records = model}, JsonRequestBehavior.AllowGet);
+        }
         [HttpPost]
         public JsonResult BeneficiariosPeloCliente(Int64 IdCliente, int jtStartIndex = 0, int jtPageSize = 0, string jtSorting = null)
         {
@@ -105,7 +123,25 @@ namespace WebAtividadeEntrevista.Controllers
             }
         }
 
-       
 
+        [HttpPost]
+        public JsonResult Remover(long id)
+        {
+            try
+            {
+                BoBeneficiario bo = new BoBeneficiario();
+                bo.Excluir(id);
+
+
+
+                return Json(new { Result = "OK", }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception erros)
+            {
+
+                return Json(string.Join(Environment.NewLine, "Erro ao remover"));
+            }
+            
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace FI.AtividadeEntrevista.BLL
         /// </summary>
         /// <param name="id">id do Beneficiario</param>
         /// <returns></returns>
-        public List<DML.Beneficiario> Consultar(long id)
+        public DML.Beneficiario Consultar(long id)
         {
             DAL.DaoBeneficiario cli = new DAL.DaoBeneficiario();
             return cli.Consultar(id);

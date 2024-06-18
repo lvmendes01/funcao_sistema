@@ -2,17 +2,17 @@
     Layout = null;
 }
 
-
-
+@Styles.Render("~/Content/css")
+@Styles.Render("~/Content/jtable")
+@Scripts.Render("~/bundles/modernizr")
 <div class="modal-dialog">
     <div class="modal-content custom-modal-content">
         <div class="modal-header">
-            Benifeciarios <!-- Typo: should be "Beneficiários" -->
+            Beneficiários <!-- Corrigido typo -->
         </div>
         <div class="modal-body">
             <form id="modalForm">
                 <div class="row">
-
                     <div class="form-group col-md-4">
                         <label for="inputEmail4">CPF</label>
                         <input type="text" class="form-control" id="cpfBeneficiario" name="cpfBeneficiario" placeholder="999.999.999-99" onChange="Validacao_CPF(this)" required>
@@ -27,15 +27,12 @@
                     </div>
                 </div>
                 <br />
-
                 <table id="gridBeneficiarios" class="table"></table>
-
-
             </form>
-
         </div>
     </div>
 </div>
+
 <style>
     .custom-modal-content {
         height: auto; /* Altura personalizada */
@@ -44,21 +41,18 @@
 </style>
 
 <script>
-
     var urlPostBeneficiários = '@Url.Action("Incluir", "Beneficiario", new { area = "" })';
     var urlPostListaBeneficiários = '@Url.Action("BeneficiariosPeloCliente", "Beneficiario", new { area = "" })';
     var urlPostAtualizarBeneficiário = '@Url.Action("Atualizar", "Beneficiario", new { area = "" })';
-
-    
-
+    var urlGetAlterar = '@Url.Action("Alterar", "Beneficiario", new { area = "" })';
+    var urlPostRemover = '@Url.Action("Remover", "Beneficiario", new { area = "" })';
 </script>
-<!-- Bootstrap JS (se estiver usando Bootstrap) -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-@Scripts.Render("~/bundles/bootstrap")
-@Scripts.Render("~/bundles/beneficiarios")
-@Scripts.Render("~/bundles/listBeneficiarios")
+@Scripts.Render("~/bundles/jtable")
 @Scripts.Render("~/bundles/jquerymask")
 @Scripts.Render("~/bundles/inputmask")
 @Scripts.Render("~/bundles/validacaoCpf")
+@Scripts.Render("~/bundles/beneficiarios")
+@Scripts.Render("~/bundles/listBeneficiarios")
+
 

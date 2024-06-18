@@ -35,7 +35,7 @@ namespace FI.AtividadeEntrevista.DAL
         /// Inclui um novo Beneficiario
         /// </summary>
         /// <param name="Beneficiario">Objeto de Beneficiario</param>
-        internal List<DML.Beneficiario> Consultar(long Id)
+        internal DML.Beneficiario Consultar(long Id)
         {
             List<System.Data.SqlClient.SqlParameter> parametros = new List<System.Data.SqlClient.SqlParameter>();
 
@@ -44,7 +44,7 @@ namespace FI.AtividadeEntrevista.DAL
             DataSet ds = base.Consultar("FI_SP_ConsBeneficiarios", parametros);
             List<DML.Beneficiario> cli = Converter(ds);
 
-            return cli;
+            return cli.FirstOrDefault();
         }
 
         /// <summary>
