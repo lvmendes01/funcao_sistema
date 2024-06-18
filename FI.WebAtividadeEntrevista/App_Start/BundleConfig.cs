@@ -46,16 +46,17 @@ namespace FI.WebAtividadeEntrevista
             bundles.Add(new StyleBundle("~/Content/jtable").Include(
                       "~/Scripts/jtable/themes/metro/darkgray/jtable.css"));
 
-
+            #region Comum
             bundles.Add(new ScriptBundle("~/bundles/jquerymask").Include(
-                        "~/Scripts/jquery.mask.min.js"));
+                        "~/Scripts/Comum/jquery.mask.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
-                        "~/Scripts/jquery.inputmask.min.js"));
+                        "~/Scripts/Comum/jquery.inputmask.min.js"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/validacaoCpf").Include(
                       "~/Scripts/Comum/validacaoCpf.js"));
+            #endregion
 
             bundles.Add(new ScriptBundle("~/bundles/beneficiarios").Include(
                       "~/Scripts/Beneficiarios/FI.beneficiarios.js"));
