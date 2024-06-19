@@ -28,3 +28,4 @@ jobs:
           tags: |
             FI.WebAtividadeEntrevista:latest
             FI.WebAtividadeEntrevista:${{ github.run_number }}
+            
