@@ -26,6 +26,5 @@ jobs:
           push: true
           file: ./FI.WebAtividadeEntrevista/Dockerfile
           tags: |
-            FI.WebAtividadeEntrevista:latest
-            FI.WebAtividadeEntrevista:${{ github.run_number }}
-            
+            WebAtividade:latest
+            WebAtividade:${{ github.run_number }}
