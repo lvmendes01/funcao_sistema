@@ -1,0 +1,15 @@
+name: CI-DI
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exemplo
+        run: echo "pipeline"
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+       
