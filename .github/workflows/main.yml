@@ -10,4 +10,6 @@ jobs:
     steps:
       - name: Exemplo
         run: echo "pipeline"
-      
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+       
