@@ -101,7 +101,7 @@ namespace WebAtividadeEntrevista.Controllers
                                
                 return Json("Cadastro alterado com sucesso");
             }
-        }mbox 
+        } 
 
         [HttpGet]
         public ActionResult Alterar(long id)
