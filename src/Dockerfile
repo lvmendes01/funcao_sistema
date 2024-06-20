@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
 # Copie o arquivo de projeto e restaure dependências
-COPY src/FI.WebAtividadeEntrevista.csproj .
+COPY src/FI.WebAtividadeEntrevista.csproj ./
 RUN dotnet restore
 
 # Copie todos os outros arquivos e compile o aplicativo
