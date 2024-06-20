@@ -28,3 +28,4 @@ jobs:
           tags: |
             web_atividade:latest
             web_atividade:${{ github.run_number }}
+            
