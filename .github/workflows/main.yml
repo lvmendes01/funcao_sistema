@@ -22,9 +22,9 @@ jobs:
       - name: Build and push        
         uses: docker/build-push-action@v6
         with:
-          context: ./FI.WebAtividadeEntrevista
+          context: ./src
           push: true
-          file: ./FI.WebAtividadeEntrevista/Dockerfile
+          file: ./src
           tags: |
             web_atividade:latest
             web_atividade:${{ github.run_number }}
